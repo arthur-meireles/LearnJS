@@ -2,24 +2,23 @@
 
 {% block head %}
   <title>Sobre</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
 
-<div id="wrapper">
-  <img
-    src="https://avatars1.githubusercontent.com/u/38770562?s=400&u=fe73494f860728d325a0abf511b94259ac783de6&v=4"
-    alt="arthur meireles"
-  />
-  <h1>Arthur Meireles</h1>
-  <h2>Desenvolvedor Full-stack</h2>
-  <p>Evoluindo cada dia mais na stack javascript.</p>
-</div>
-  <div id="links-footer" class="links">
-    <a href="https://github.com/arthur-meireles" target="blank">Github</a>
-    <a href="https://www.linkedin.com/in/o-arthur-meireles/" target="blank">Linkedin</a>
+  <div id="wrapper">
+    <img src="{{about.avatar_url}}" alt="Imagem de {{about.name}}"/>
+    <h1>{{about.name}}</h1>
+    <h2>{{about.rule}}</h2>
+    <p>{{about.description}}</p>
   </div>
+    <div id="links-footer" class="links">
+        {% for link in about.links %}
+      <a href="{{link.url}}" target="blank">{{link.name}}</a>
+      {% endfor %}
 
-  {% endblock %}
+    </div>
+
+
+{% endblock %}
