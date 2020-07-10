@@ -2,107 +2,44 @@
 
 {% block head %}
   <title>Portfolio</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <div id="wrapper">
-        <h1>Aulas</h1>
+  <div id="wrapper">
+    <h1>Aulas</h1>
+  </div>
+
+</div>
+<section class="cards">
+  {% for item in items %}
+    <div class="card" id="{{item.id}}">
+      <div class="card__image-container">
+        <img src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg"/>
       </div>
-
+      <div class="card__content">
+        <p>{{item.title}}</p>
+      </div>
+      <div class="card__info">
+        <p>{{item.duration}}</p>
+        <p class="card__price">{{item.price}}</p>
+      </div>
     </div>
-    <section class="cards">
-        <div class="card" id="pFKN_YLWYio">
-            <div class="card__image-container">
-              <img src="https://img.youtube.com/vi/pFKN_YLWYio/maxresdefault.jpg" />
-            </div>
-            <div class="card__content">
-              <p>Explicando a matrix | Átila Iamarino</p>
-            </div>
-            <div class="card__info">
-              <p>15 min</p>
-              <p class="card__price">Free</p>
-            </div>
-          </div>
+  </div>
+{% endfor %}
+</section>
 
-          <div class="card" id="5XaURR-qMPU">
-            <div class="card__image-container">
-              <img src="https://img.youtube.com/vi/5XaURR-qMPU/mqdefault.jpg" />
-            </div>
-            <div class="card__content">
-              <p>Empatia | Átila Iamarino</p>
-            </div>
-            <div class="card__info">
-              <p>10 min</p>
-              <p class="card__price">Free</p>
-            </div>
-          </div>
+<div class="modal-overlay">
+<div class="modal">
+  <a class="close-modal">
+    <i class="material-icons">close</i>
+  </a>
+  <div class="modal-content">
+    <iframe src="" frameborder="0"></iframe>
+  </div>
+</div>
+</div>
 
-          <div class="card" id="OSc3WnsziKg">
-            <div class="card__image-container">
-              <img src="https://img.youtube.com/vi/OSc3WnsziKg/mqdefault.jpg" />
-            </div>
-            <div class="card__content">
-              <p>Qual o frame rate do nosso olho? | Átila Iamarino</p>
-            </div>
-            <div class="card__info">
-              <p>15 min</p>
-              <p class="card__price">Free</p>
-            </div>
-          </div>
+<script src="scripts.js"></script>
 
-          <div class="card" id="ZXbtY-8j-QU">
-            <div class="card__image-container">
-              <img src="https://img.youtube.com/vi/ZXbtY-8j-QU/mqdefault.jpg" />
-            </div>
-            <div class="card__content">
-              <p>Teste de personalidade | Átila Iamarino</p>
-            </div>
-            <div class="card__info">
-              <p>15 min</p>
-              <p class="card__price">Free</p>
-            </div>
-          </div>
-
-          <div class="card" id="UBTXXI7ZgB0">
-            <div class="card__image-container">
-              <img src="https://img.youtube.com/vi/UBTXXI7ZgB0/mqdefault.jpg" />
-            </div>
-            <div class="card__content">
-              <p>Intuição | Átila Iamarino</p>
-            </div>
-            <div class="card__info">
-              <p>10 min</p>
-              <p class="card__price">Free</p>
-            </div>
-          </div>
-
-          <div class="card" id="OVza8jdMXXo">
-            <div class="card__image-container">
-              <img src="https://img.youtube.com/vi/OVza8jdMXXo/mqdefault.jpg" />
-            </div>
-            <div class="card__content">
-              <p>Criatividade | Átila Iamarino</p>
-            </div>
-            <div class="card__info">
-              <p>15 min</p>
-              <p class="card__price">Free</p>
-            </div>
-          </div>
-
-    </section>
-    <div class="modal-overlay">
-        <div class="modal">
-            <a class="close-modal">
-                <i class="material-icons">close</i>
-            </a>
-            <div class="modal-content">
-                <iframe src="" frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <script src="scripts.js"></script>
-
-  {% endblock %}
+{% endblock %}
