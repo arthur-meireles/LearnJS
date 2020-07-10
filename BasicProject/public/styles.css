@@ -80,6 +80,7 @@ header {
   background:var(--color-rocket);
   display: grid;
   align-items: center;
+  cursor: pointer;
 }
 
 .card__image-container img{
@@ -141,4 +142,20 @@ iframe{
   position: absolute;
   top: 7%;
 
+}
+
+/*=== FEATURED ===*/
+
+.featured-wrapper.card__image-container {
+  position: relative;
+}
+
+.featured{
+  position: absolute;
+  background: #ff4500;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 16px;
+  right: 2px;
+  top: -12px;
 }
